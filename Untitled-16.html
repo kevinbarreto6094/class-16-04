@@ -3,103 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <title>Solicitud de Cotización - Euroshop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #003366;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
+    body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    form { background: white; max-width: 800px; margin: 30px auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #003366; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
     input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      box-sizing: border-box;
+      width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;
     }
     button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #003366;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
+      background-color: #003366; color: white; border: none; padding: 15px; margin-top: 20px;
+      width: 100%; font-size: 16px; border-radius: 5px; cursor: pointer;
     }
-    button:hover {
-      background-color: #0055a5;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #003366;
-      color: #fff;
-      margin-top: 40px;
-    }
+    button:hover { background-color: #0055a5; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Solicitud de Cotización</h1>
-  <p>Completa el formulario para recibir una cotización personalizada</p>
-</header>
+  <form action="#" method="POST">
+    <h1>Solicitud de Cotización</h1>
 
-<main>
-  <form action="procesar-cotizacion.php" method="POST">
-    <label for="nombre">Nombre completo:</label>
+    <label for="nombre">Nombre</label>
     <input type="text" id="nombre" name="nombre" required>
 
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
+    <label for="apellidoP">Apellido Paterno</label>
+    <input type="text" id="apellidoP" name="apellidoP" required>
 
-    <label for="telefono">Teléfono de contacto:</label>
-    <input type="tel" id="telefono" name="telefono" required>
+    <label for="apellidoM">Apellido Materno</label>
+    <input type="text" id="apellidoM" name="apellidoM" required>
 
-    <label for="vehiculo">Modelo de vehículo:</label>
-    <select id="vehiculo" name="vehiculo" required>
-      <option value="">-- Selecciona un modelo --</option>
-      <option value="Polo">Volkswagen Polo</option>
-      <option value="Golf">Volkswagen Golf</option>
-      <option value="Tiguan">Volkswagen Tiguan</option>
-      <option value="Jetta">Volkswagen Jetta</option>
-      <option value="Touareg">Volkswagen Touareg</option>
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" name="dni" required>
+
+    <label for="celular">Celular</label>
+    <input type="tel" id="celular" name="celular" required>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="distrito">Distrito</label>
+    <select id="distrito" name="distrito" required>
+      <option value="">Selecciona un distrito</option>
+      <option>Lima</option>
+      <option>Ate</option>
+      <option>San Borja</option>
+      <!-- Agrega más distritos si lo deseas -->
     </select>
 
-    <label for="mensaje">Mensaje adicional:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí cualquier detalle adicional..."></textarea>
+    <label for="marca">Marca</label>
+    <select id="marca" name="marca" required>
+      <option value="">Seleccionar Marca</option>
+      <option>Volkswagen</option>
+      <option>SEAT</option>
+      <option>Audi</option>
+      <option>Porsche</option>
+      <option>CUPRA</option>
+      <option>Ducati</option>
+    </select>
 
-    <button type="submit">Enviar solicitud</button>
+    <label for="local">Local</label>
+    <select id="local" name="local" required>
+      <option value="">Seleccionar Local</option>
+    </select>
+
+    <label for="modelo">Modelo</label>
+    <select id="modelo" name="modelo" required>
+      <option value="">Seleccionar Modelo</option>
+    </select>
+
+    <label for="version">Versión</label>
+    <select id="version" name="version">
+      <option value="">Seleccionar Versión</option>
+    </select>
+
+    <label for="interes">Estoy buscando</label>
+    <select id="interes" name="interes">
+      <option>Hablar con un asesor comercial</option>
+      <option>Chatear con un asesor comercial</option>
+      <option>Solo información</option>
+    </select>
+
+    <label for="intercambio">¿Dejar auto como parte de pago?</label>
+    <select id="intercambio" name="intercambio">
+      <option>Si</option>
+      <option>No</option>
+    </select>
+
+    <label for="kilometraje">Kilometraje</label>
+    <input type="text" id="kilometraje" name="kilometraje">
+
+    <label for="marca_auto">Marca de su vehículo</label>
+    <input type="text" id="marca_auto" name="marca_auto">
+
+    <label for="modelo_auto">Modelo de su vehículo</label>
+    <input type="text" id="modelo_auto" name="modelo_auto">
+
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+    <label>
+      <input type="checkbox" required> He leído y acepto los Términos y Condiciones
+    </label>
+
+    <button type="submit">Enviar Solicitud</button>
   </form>
-</main>
-
-<footer>
-  <p>Euroshop S.A. - Av. Domingo Orué 973, Surquillo, Lima | Tel: (01) 618 5055</p>
-</footer>
 
 </body>
 </html>
